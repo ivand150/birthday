@@ -46,7 +46,7 @@ export default function Home() {
           <>
             <Confetti/>
             {!rickkRolled && <h1 className={styles.title}>
-              HAPPY BIRTHDAY!
+              HAPPY BIRTHDAY
             </h1>}
             {rickkRolled && <YouTube videoId="dQw4w9WgXcQ" opts={opts}  onReady={onPlayerReady}/>}
           </>
