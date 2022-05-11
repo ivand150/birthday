@@ -30,7 +30,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    if(window.innerWidth < 360) setVideoSize("360")
+    if(window.innerWidth <= 360) setVideoSize("360")
   },[])
 
   return (
