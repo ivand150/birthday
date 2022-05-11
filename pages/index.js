@@ -15,6 +15,11 @@ export default function Home() {
     setTimeout(() => useRickrolled(true), 3000)
   }
 
+  const onPlayerReady = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.playVideo();
+  }
+
   const opts = {
     height: "390",
     width: "640",
@@ -41,7 +46,7 @@ export default function Home() {
             {!rickkRolled && <h1 className={styles.title}>
               HAPPY BIRTHDAY
             </h1>}
-            {rickkRolled && <YouTube videoId="dQw4w9WgXcQ" opts={opts} />}
+            {rickkRolled && <YouTube videoId="dQw4w9WgXcQ" opts={opts}  onReady={onPlayerReady}/>}
           </>
         )}
 
