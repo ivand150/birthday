@@ -16,20 +16,15 @@ export default function Home() {
   }
 
   const onPlayerReady = (event) => {
-    // access to player in all event handlers via event.target
     event.target.playVideo();
   }
 
   const opts = {
-    height: "390",
-    width: "640",
     playerVars: {
       autoplay: 1,
       controls: 0,
     },
   };
-
-
 
   return (
     <div className={styles.container}>
@@ -60,8 +55,6 @@ export default function Home() {
           </>
         )}
       </main>
-
-
     </div>
   )
 }
