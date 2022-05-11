@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
@@ -6,11 +7,12 @@ import Confetti from 'react-confetti'
 import YouTube from 'react-youtube';
 
 export default function Home() {
-  const [startConfetti, useConfetti] = useState(false)
+  const [startConfetti, setConfetti] = useState(false)
+  const [rickkRolled, useRickrolled] = useState(false)
 
   const handleClick = () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useConfetti(true)
+    setConfetti(true)
+    setTimeout(() => useRickrolled(true), 5000)
   }
 
   const opts = {
@@ -18,6 +20,7 @@ export default function Home() {
     width: "640",
     playerVars: {
       autoplay: 1,
+      controls: 0,
     },
   };
 
@@ -35,11 +38,10 @@ export default function Home() {
         {startConfetti && (
           <>
             <Confetti/>
-            <h1 className={styles.title}>
+            {!rickkRolled && <h1 className={styles.title}>
               HAPPY BIRTHDAY
-            </h1>
-            <YouTube videoId="dQw4w9WgXcQ" 
-            opts={opts} />
+            </h1>}
+            {rickkRolled && <YouTube videoId="dQw4w9WgXcQ" opts={opts} />}
           </>
         )}
 
