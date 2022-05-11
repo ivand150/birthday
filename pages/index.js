@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Button } from './styles'
+import  Button  from './styles'
 import Confetti from 'react-confetti'
 import YouTube from 'react-youtube';
 
