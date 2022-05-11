@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import  Button  from './styles'
@@ -8,11 +8,12 @@ import YouTube from 'react-youtube';
 
 export default function Home() {
   const [startConfetti, setConfetti] = useState(false)
-  const [rickkRolled, useRickrolled] = useState(false)
+  const [rickkRolled, setRickrolled] = useState(false)
+  const [videoSize, setVideoSize] = useState("640")
 
   const handleClick = () => {
     setConfetti(true)
-    setTimeout(() => useRickrolled(true), 3000)
+    setTimeout(() => setRickrolled(true), 3000)
   }
 
   const onPlayerReady = (event) => {
@@ -20,11 +21,17 @@ export default function Home() {
   }
 
   const opts = {
+    height: "390",
+    width: videoSize,
     playerVars: {
       autoplay: 1,
       controls: 0,
     },
   };
+
+  useEffect(() => {
+    if(window.innerWidth < 360) setVideoSize("360")
+  },[])
 
   return (
     <div className={styles.container}>
