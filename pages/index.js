@@ -17,14 +17,11 @@ export default function Home() {
     height: "390",
     width: "640",
     playerVars: {
-      autoplay: 0,
+      autoplay: 1,
     },
   };
 
-  const onPlayerReady = (event) => {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  }
+
 
   return (
     <div className={styles.container}>
@@ -42,7 +39,7 @@ export default function Home() {
               HAPPY BIRTHDAY
             </h1>
             <YouTube videoId="dQw4w9WgXcQ" 
-            opts={opts} onReady={onPlayerReady} />
+            opts={opts} />
           </>
         )}
 
