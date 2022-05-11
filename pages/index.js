@@ -12,7 +12,7 @@ export default function Home() {
 
   const handleClick = () => {
     setConfetti(true)
-    setTimeout(() => useRickrolled(true), 5000)
+    setTimeout(() => useRickrolled(true), 3000)
   }
 
   const opts = {
