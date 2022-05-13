@@ -48,7 +48,7 @@ export default function Home() {
             {!rickkRolled && <h1 className={styles.title}>
               HAPPY BIRTHDAY
             </h1>}
-            {rickkRolled && <YouTube videoId="dQw4w9WgXcQ" opts={opts}  onReady={onPlayerReady}/>}
+            {rickkRolled && <YouTube videoId="jIQ6UV2onyI" opts={opts}  onReady={onPlayerReady}/>}
           </>
         )}
 
